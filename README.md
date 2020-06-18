@@ -72,27 +72,27 @@ $ yarn add @fortawesome/fontawesome-free
 
 Next import font in your ```app/javascript/packs/application.js```. You can find more about import in [FA pages](https://fontawesome.com/how-to-use/with-the-api/setup/importing-icons).
 
-Now you have icons installed through webpack and still you can use ```fa_icon``` helpers.
+Now you have icons installed through webpack and still you can use ```fa5_icon``` helpers.
 
 ## Usage
-Gem provides FontAwesome icons through helper. In your views just call `fa_icon`.
+Gem provides FontAwesome icons through helper. In your views just call `fa5_icon`.
 
 ### Basic usage
 ```ruby
-fa_icon('camera-retro')
+fa5_icon('camera-retro')
 # => <i class="fas fa-camera-retro"></i>
 
-fa_icon('camera-retro', style: 'color: Tomato')
+fa5_icon('camera-retro', style: 'color: Tomato')
 # => <i class="fas fa-camera-retro" style="color:Tomato"></i>
 
-fa_icon('camera-retro', class: 'my-class', text: 'Camera', size: '3x')
+fa5_icon('camera-retro', class: 'my-class', text: 'Camera', size: '3x')
 # => <i class="fas fa-camera-retro my-class fa-3x"></i>
 # =>  <span>Camera</span>
 
-fa_icon(:camera_retro, class: 'my-class')
+fa5_icon(:camera_retro, class: 'my-class')
 # => <i class="fas fa-camera-retro my-class"></i>
 
-fa_icon(:camera_retro, text: 'Camera', right: true)
+fa5_icon(:camera_retro, text: 'Camera', right: true)
 # =>  <span class="fa5-text-r">Camera</span>
 # => <i class="fas fa-camera-retro"></i>
 ```
@@ -111,22 +111,22 @@ If you want to use different icon style you can do this through ```type``` attri
 
 
 ```ruby
-fa_icon('camera-retro', type: :solid) #Default
+fa5_icon('camera-retro', type: :solid) #Default
 # => <i class="fas fa-camera-retro"></i>
 
-fa_icon('camera-retro', type: :regular)
+fa5_icon('camera-retro', type: :regular)
 # => <i class="far fa-camera-retro"></i>
 
-fa_icon('camera-retro', type: :light)
+fa5_icon('camera-retro', type: :light)
 # => <i class="fal fa-camera-retro"></i>
 
-fa_icon('camera-retro', type: :brand)
+fa5_icon('camera-retro', type: :brand)
 # => <i class="fab fa-camera-retro"></i>
 
-fa_icon('camera-retro', type: :duotone)
+fa5_icon('camera-retro', type: :duotone)
 # => <i class="fad fa-camera-retro"></i>
 
-fa_icon('camera-retro', type: :fab)
+fa5_icon('camera-retro', type: :fab)
 # => <i class="fab fa-camera-retro"></i>
 
 ```
@@ -157,10 +157,10 @@ far_stacked_icon('camera', base: 'circle', type: :fal)
 ### Animations and data attributes
 FontAwesome 5 provides new animations and data attributes. Here are some examples how to use them:
 ```ruby
-fa_icon('camera-retro', animation: 'spin')
+fa5_icon('camera-retro', animation: 'spin')
 # => <i class="fas fa-camera-retro fa-spin"></i>
 
-fa_icon('camera-retro', data: {'fa-transform': 'rotate-90'})
+fa5_icon('camera-retro', data: {'fa-transform': 'rotate-90'})
 # => <i class="fas fa-camera-retro" data-fa-transform="rotate-90"></i>
 
 ```
@@ -168,7 +168,7 @@ fa_icon('camera-retro', data: {'fa-transform': 'rotate-90'})
 In FontAwesome5 the text is right behind icon. For better readability text has defaultly set to ```padding-left: 5px;```. If you want to override this setting, you can do that through ```.fa5-text``` class in css styles.
 
 ### Layered and Stacked icons
-FontAwesome 5 newly provides layered icons. For backward compatibility there were preserved ```fa_stacked_icon``` helper, but you can acomplish the same result with ```fa_layered_icon```.
+FontAwesome 5 newly provides layered icons. For backward compatibility there were preserved ```fa5_stacked_icon``` helper, but you can acomplish the same result with ```fa_layered_icon```.
 
 #### Layered icon examples
 ```fa_layered_icon``` takes options and block of code that will be rendered inside.
@@ -176,14 +176,14 @@ FontAwesome 5 newly provides layered icons. For backward compatibility there wer
 Following ```fa_layered_icon``` examples are written in ```haml```.
 ```ruby
 = fa_layered_icon do
-  = fa_icon 'circle'
+  = fa5_icon 'circle'
 # => <span class="fa-layers fa-fw">
 # =>   <i class="fas fa-circle"></i>
 # => </span>
 
 = fa_layered_icon style: 'background: MistyRose', size: '4x' do
-  = fa_icon 'circle', style: 'color: Tomato'
-  = fa_icon 'times', class: 'fa-inverse', data: { fa_transform: 'shrink-6' }
+  = fa5_icon 'circle', style: 'color: Tomato'
+  = fa5_icon 'times', class: 'fa-inverse', data: { fa_transform: 'shrink-6' }
 # => <div class="fa-4x">
 # =>   <span class="fa-layers fa-fw" style="background: MistyRose">
 # =>     <i class="fas fa-circle" style="color: Tomato"></i>
@@ -192,7 +192,7 @@ Following ```fa_layered_icon``` examples are written in ```haml```.
 # => </div>
 
 = fa_layered_icon aligned: :false do
-  = fa_icon 'circle'
+  = fa5_icon 'circle'
   %span.fa-layers-text= "Text"
   %span.fa-layers-counter= "1,419"
 # => <span class="fa-layers">
@@ -204,25 +204,25 @@ Following ```fa_layered_icon``` examples are written in ```haml```.
 #### Stacked icon examples
 For different base icon type you can use ```base_type``` option.
 ```ruby
-fa_stacked_icon('camera', base: 'circle')
+fa5_stacked_icon('camera', base: 'circle')
 # => <span class="fa-stack">
 # =>   <i class="fas fa-circle fa-stack-2x"></i>
 # =>   <i class="fas fa-camera fa-stack-1x"></i>
 # => </span>
 
-fa_stacked_icon('camera inverse', base: 'circle', type: :fas, class: 'my-class') #Default :fas is default type
+fa5_stacked_icon('camera inverse', base: 'circle', type: :fas, class: 'my-class') #Default :fas is default type
 # => <span class="fa-stack my-class">
 # =>   <i class="fas fa-circle fa-stack-2x"></i>
 # =>   <i class="fas fa-camera fa-inverse fa-stack-1x"></i>
 # => </span>
 
-fa_stacked_icon('camera', base: 'circle', reverse: true, text: 'Text!') #Default: reverse: false
+fa5_stacked_icon('camera', base: 'circle', reverse: true, text: 'Text!') #Default: reverse: false
 # => <span class="fa-stack">
 # =>   <i class="fas fa-circle fa-stack-1x"></i>
 # =>   <i class="fas fa-camera fa-stack-2x"></i>
 # => </span>Text!
 
-fa_stacked_icon('camera', base: 'circle', type: :fas, base_type: :fab)
+fa5_stacked_icon('camera', base: 'circle', type: :fas, base_type: :fab)
 # => <span class="fa-stack">
 # =>   <i class="fab fa-circle fa-stack-2x"></i>
 # =>   <i class="fas fa-camera fa-stack-1x"></i>
@@ -243,7 +243,7 @@ More examples can be found in specs.
 More animation and data attributes can be found on [FontAwesome documentation](https://fontawesome.com/how-to-use/svg-with-js).
 
 ## FontAwesome 5 Pro icons
-Due to licence policy this gem pack only free FA5 icons. However ```fa_icon``` helper support all types of icons. If you purchased FA5 Pro icons and want to use helpers provided by this gem it's possible.
+Due to licence policy this gem pack only free FA5 icons. However ```fa5_icon``` helper support all types of icons. If you purchased FA5 Pro icons and want to use helpers provided by this gem it's possible.
 1. Add this gem to your ```Gemfile``` without including anything to ```application.css``` and ```application.js```.
 2. Create a [Kit](https://fontawesome.com/kits) on Font Awesome.
 3. Add `= javascript_include_tag "//kit.fontawesome.com/[YOUR-KIT-ID].js"` in the head of your layout(s).
