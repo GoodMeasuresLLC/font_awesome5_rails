@@ -32,7 +32,7 @@ describe FontAwesome5Rails do
     end
   end
 
-  %w(fa_icon fa5_icon).each do |method|
+  %w(fa5_icon).each do |method|
     describe "#{method} tags" do
       it 'should return correct type tags' do
         expect(send method, 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'

@@ -36,12 +36,12 @@ module FontAwesome5
       %w(fas far fal fab fad).each do |type|
         define_method :"#{type}_icon" do |icon, options = {}|
           options[:type] = type.to_sym unless options.key? :type
-          fa_icon(icon, options)
+          fa5_icon(icon, options)
         end
 
         define_method :"#{type}_stacked_icon" do |icon, options = {}|
           options[:type] = type.to_sym unless options.key? :type
-          fa_stacked_icon(icon, options)
+          fa5_stacked_icon(icon, options)
         end
       end
 
