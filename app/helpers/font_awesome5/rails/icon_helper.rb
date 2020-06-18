@@ -10,7 +10,6 @@ module FontAwesome5
         parser = FaIconParser.new(icon, options)
         parser.get_content_tag
       end
-      alias_method :fa_icon, :fa5_icon
 
       def fa5_stacked_icon(icon, options = {})
         parser = FaStackedIconParser.new(icon, options)
@@ -22,7 +21,6 @@ module FontAwesome5
         tags += parser.text unless parser.text.nil?
         tags
       end
-      alias_method :fa_stacked_icon, :fa5_stacked_icon
 
       def fa_layered_icon(options = {}, &block)
         parser = FaLayeredIconParser.new(options)
